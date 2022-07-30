@@ -8,6 +8,19 @@
 let baraja = []
 const tipos = ['C', 'D', 'H', 'S']
 const letras = ['J', 'Q', 'K', 'A']
+
+let puntosJugador = 0
+let puntosComputadora = 0
+
+//Referencias al HTML
+const btnPedir = document.querySelector('#btn-pedir')
+// const smallPuntajeJugador = document.querySelector('small')
+const btnDetener = document.querySelector('#btn-detener')
+const btnNuevo = document.querySelector('#btn-nuevo')
+const puntsHTML = document.querySelectorAll('small')
+const divJugadorCartas = document.querySelector('#jugador-cartas')
+const divComputadoraCartas = document.querySelector('#computadora-cartas')
+
 const crearBaraja = () => {
   //Se ha pobrlado el arreglo con los números y tipos de la baraja
   for (let i = 2; i <= 10; i++) {
@@ -25,26 +38,99 @@ const crearBaraja = () => {
 
 crearBaraja()
 
-console.log(baraja)
+// console.log(baraja)
 
 //Esta funcion pide una carta
 
 const pedirCarta = () => {
-  if (baraja.length === 0) throw 'No hay cartas en la baraja'
+  const barajaTamanio = baraja.length
+  if (barajaTamanio === 0) throw 'No hay cartas en la baraja'
 
-  const index = Math.floor(Math.random() * 51)
-  console.log({ index })
+  const index = Math.floor(Math.random() * barajaTamanio)
+  // console.log({ index })
   const carta = baraja.splice(index, 1)[0]
-  console.log({ carta })
-//   console.log(baraja)
+  // console.log({ carta })
+  //   console.log(baraja)
   return carta
 }
 
 // pedirCarta()
 
-const valorCarta = (carta) =>  {
-    const valor = carta.substring(0, carta.length - 1)
-    return isNaN(valor) ? (valor === 'A' ? 11 : 10) : Number(valor)
+const valorCarta = (carta) => {
+  const valor = carta.substring(0, carta.length - 1)
+  return isNaN(valor) ? (valor === 'A' ? 11 : 10) : Number(valor)
 }
 
-console.log(valorCarta(pedirCarta()))
+//Turno de la computadora
+
+const turnoComputadora = (puntosMinimos) => {
+  do {
+    const carta = pedirCarta()
+    puntosComputadora += valorCarta(carta)
+    puntsHTML[1].innerText = puntosComputadora
+
+    const imgCarta = document.createElement('img')
+    imgCarta.src = `assets/cartas/${carta}.png`
+    imgCarta.classList.add('carta')
+    divComputadoraCartas.append(imgCarta)
+
+    if (puntosMinimos > 21) break
+  } while (puntosComputadora <= puntosMinimos && puntosMinimos <= 21)
+
+  setTimeout(() => {
+    if (puntosMinimos === puntosComputadora)
+      alert('Has empatado con la computadora')
+    else if (puntosMinimos > 21) alert('La computadora te ha ganado')
+    else if (puntosComputadora > 21)
+      alert('Genial, le has ganado a la computadora')
+    else alert('computadora gana')
+  }, 100)
+}
+//Eventos
+
+btnPedir.addEventListener('click', () => {
+  // console.log('click')
+  const carta = pedirCarta()
+  // console.log({ carta })
+  puntosJugador += valorCarta(carta)
+  console.log({ puntosJugador })
+  puntsHTML[0].innerText = puntosJugador
+
+  // /* <img class="carta" src="assets/cartas/grey_back.png" alt="" /> */
+
+  const imgCarta = document.createElement('img')
+  imgCarta.src = `assets/cartas/${carta}.png`
+  imgCarta.classList.add('carta')
+  divJugadorCartas.append(imgCarta)
+
+  if (puntosJugador > 21) {
+    btnPedir.disabled = true
+    btnDetener.disabled = true
+    console.warn('sorry manito, has perdido')
+    turnoComputadora(puntosJugador)
+  } else if (puntosJugador === 21) {
+    btnPedir.disabled = true
+    btnDetener.disabled = true
+    console('Genial tío, le habeis ganado a la maquina')
+    turnoComputadora(puntosJugador)
+  }
+})
+
+btnDetener.addEventListener('click', () => {
+  btnPedir.disabled = true
+  btnDetener.disabled = true
+  turnoComputadora(puntosJugador)
+})
+
+btnNuevo.addEventListener('click', () => {
+  puntosJugador = 0
+  puntosComputadora = 0
+  btnPedir.disabled = false
+  btnDetener.disabled = false
+  puntsHTML[0].innerText = 0
+  puntsHTML[1].innerText = 0
+  divJugadorCartas.innerHTML = ''
+  divComputadoraCartas.innerHTML = ''
+  console.clear()
+  crearBaraja()
+})

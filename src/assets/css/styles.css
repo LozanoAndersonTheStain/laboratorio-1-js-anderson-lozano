@@ -19,11 +19,11 @@ html, body{
 
 .carta{
     position: relative;
-    width: 240px;
+    width: 180px;
     left: 100px;
     margin-left: -75px;
 }
 
 #jugador-cartas, #computadora-cartas{
-    height: 240;
+    height: 270px;
 } 
