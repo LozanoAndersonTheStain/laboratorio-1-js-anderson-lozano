@@ -1,29 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
 
-
-html, body{
-    margin: 0;
-    background-color: #329292;
-    color: white;
-    font-family: 'Mochiy Pop One', sans-serif;
+html,
+body {
+  margin: 0;
+  background-color: #329292;
+  color: white;
+  font-family: 'Mochiy Pop One', sans-serif;
 }
 
-.titulo{
-    text-align: center;
-    background-color: black;
-    color: white;
-    padding: 20px;
-    font-size: 25px;
-    border-radius: 15px;
+.titulo {
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  font-size: 25px;
+  border-radius: 15px;
 }
 
-.carta{
-    position: relative;
-    width: 180px;
-    left: 100px;
-    margin-left: -75px;
+.carta {
+  position: relative;
+  width: 180px;
+  left: 100px;
+  margin-left: -75px;
 }
 
-#jugador-cartas, #computadora-cartas{
-    height: 270px;
-} 
+#jugador-cartas,
+#computadora-cartas {
+  height: 270px;
+}
