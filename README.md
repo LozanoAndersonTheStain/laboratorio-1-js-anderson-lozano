@@ -35,3 +35,8 @@ https://lozanoandersonthestain.github.io/laboratorio-1-js-anderson-lozano/src/in
 
 #### Aqui se encuentra el link en donde esta desplegado el juego en la red de Netlify:
 https://loquacious-taiyaki-e9bca2.netlify.app/src/index.html
+
+
+![logo (1)](https://user-images.githubusercontent.com/105325882/180083080-6ecb87c5-5f93-424a-b45e-2a8ab1ef521a.png)
+
+###### Utiliza el modo oscuro: https://github.com/settings/appearance
