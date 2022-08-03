@@ -1,9 +1,10 @@
 # Laboratorio 1 JS: BlackJack
 
-En este repositorio se podrá encontrar el primer laboratorio realizado en el módulo: JavaScript
+Este repositorio ha sido creado con la intención de mostrar a los demás participantes y publico en general que ingrese a este repositorio a ver su contenido este, enterada un poco del cómo se ha creado.
 
-Este proyecto consta de la realización de un juego el cual fue realizado en tres secciones, cada una de máximo 4 pasos continuos en tres días
+Este es el primer laboratorio creado por nosotros los estudiantes de la escuela de Desarrollo de Páginas Web "Código C13", ha sido muy divertido crearlo y tedioso, ya que consta con un total de 11 pasos a seguir que han sido dictaminados por el docente en curso "Sergio Manrique" en 3 clases una tras de otra, esto con la intención de afianzar los conocimientos adquiridos hasta el momento y para mostrarnos a nosotros mismos que lo que hemos aprendido se puede aplicar en diferentes hábitos, en este caso videojuegos, cada sesión consto de 4 horas cada una para dar un toral de 12 horas empleadas en la creación del juego el cual hemos llamado "BlackJack".
 
+Este juego consta de un versus contra la máquina de uno a uno ante el cual se determina el ganador por medio del siguiente parámetro: Aquel de los dos que saque un número más cercano a 21 será determinado el ganador, pero aquel que saque un puntaje total más alto a 21 será denominado como perdedor de la partida.
 
 ### Imagenes graficas del contenido del juego en cógigo:
 
