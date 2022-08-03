@@ -28,3 +28,10 @@ Este juego consta de un versus contra la máquina de uno a uno ante el cual se d
 
 ![foyt](https://user-images.githubusercontent.com/105325885/182481760-de11993e-3a03-4df1-80f0-7abaf8fa0dd0.png)
 ![perfil de juego](https://user-images.githubusercontent.com/105325885/182481747-c0463098-8cfe-4a6b-b3b0-3ceb9d5306ef.png)
+
+
+#### Aqui se encuentra el link en donde esta desplegado el juego en la red de GitHub: 
+https://lozanoandersonthestain.github.io/laboratorio-1-js-anderson-lozano/src/index.html
+
+#### Aqui se encuentra el link en donde esta desplegado el juego en la red de Netlify:
+https://loquacious-taiyaki-e9bca2.netlify.app/src/index.html
